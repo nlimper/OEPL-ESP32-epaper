@@ -39,6 +39,8 @@ Two PlatformIO environments drive this panel (pins as in `lolin32_lite`):
   black, white, yellow, red, orange, stone grey, slate grey, sand, olive, mocha, caramel, terracotta, brown, rust, dark brown and burgundy.
   Blue, green and pink are not possible with this ink.
 
+![The 16 colours on the 2.66" display](images/2in66g-16-colours.jpg)
+
 The AP needs the matching tag type file. Upload `tagtypes/FD.json` (16 colours) or `tagtypes/FE.json` (four colours) to `/tagtypes/` on the AP,
 for example with the file editor of the AP or with
 `curl --form 'data=@tagtypes/FD.json;filename=/tagtypes/FD.json;type=application/json' http://<ap address>/edit`.
