@@ -179,9 +179,10 @@ void prepareExternalDataAvail(struct pendingData *pending, IPAddress remoteIP) {
 				uint8_t *buffer = (uint8_t *)malloc(bufferSize);
 
 				if (buffer) {
+					memset(buffer, 0, bufferSize);
 					WiFiClient *stream = http.getStreamPtr();
 					size_t bytesRead = 0;
-                    while (stream->connected() && bytesRead < bufferSize) {
+                    while ((stream->connected() || stream->available()) && bytesRead < bufferSize) {
                         if (stream->available()) {
                             size_t bytesToRead = min(1024, stream->available());
                             if (bytesRead + bytesToRead > bufferSize) bytesToRead = bufferSize - bytesRead;
