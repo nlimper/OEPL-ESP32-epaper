@@ -17,6 +17,9 @@
 #ifdef EPD_730_SPECTRA
 #include "EPD_7in3e.h"
 #endif
+#ifdef EPD_266_G
+#include "EPD_2in66g.h"
+#endif
 
 #define WAKEUP_REASON_FIRSTBOOT 0xFC
 
@@ -49,6 +52,16 @@ void drawImage(uint8_t *buffer, uint8_t dataType) {
 	EPD_7IN3E_Display(buffer);
 	Serial.println("sleep");
 	EPD_7IN3E_Sleep();
+#endif
+
+#ifdef EPD_266_G
+	// two bit planes from the AP; a black/white image comes as a single plane
+	EPD_2IN66G_Init();
+	Serial.println("display image");
+	const uint8_t *plane1 = buffer + EPD_2IN66G_WIDTH * EPD_2IN66G_HEIGHT / 8;
+	EPD_2IN66G_DisplayPlanes(buffer, dataType == 0x21 ? plane1 : NULL);
+	Serial.println("sleep");
+	EPD_2IN66G_Sleep();
 #endif
 
 }
