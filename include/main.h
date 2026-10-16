@@ -24,7 +24,11 @@
 #define IMGHEIGHT 480
 #endif
 
-#ifdef EPD_266_G
+#if defined(EPD_266_G) && defined(EPD_266_G16)
+#define HWTYPE 0xFD // Waveshare 2.66" (G), 16 colours in three refreshes
+#define IMGWIDTH 360
+#define IMGHEIGHT 184
+#elif defined(EPD_266_G)
 #define HWTYPE 0xFE // Waveshare 2.66" BWRY (G)
 #define IMGWIDTH 360
 #define IMGHEIGHT 184

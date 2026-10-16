@@ -1,0 +1,29 @@
+{
+	"version": 1,
+	"name": "Waveshare 2.66\" 16 colours (3 refreshes)",
+	"width": 360,
+	"height": 184,
+	"rotatebuffer": 1,
+	"bpp": 4,
+	"colortable": {
+		"black": [ 42, 40, 41 ],
+		"white": [ 255, 255, 255 ],
+		"yellow": [ 255, 211, 68 ],
+		"red": [ 155, 16, 1 ],
+		"orange": [ 221, 79, 24 ],
+		"stone grey": [ 161, 170, 150 ],
+		"slate grey": [ 116, 146, 135 ],
+		"sand": [ 203, 201, 148 ],
+		"olive": [ 139, 125, 89 ],
+		"mocha": [ 76, 68, 64 ],
+		"caramel": [ 191, 131, 61 ],
+		"terracotta": [ 170, 79, 52 ],
+		"brown": [ 122, 62, 48 ],
+		"rust": [ 163, 53, 25 ],
+		"dark brown": [ 40, 15, 17 ],
+		"burgundy": [ 71, 30, 18 ]
+	},
+	"shortlut": 0,
+	"contentids": [ 22, 23, 1, 2, 3, 4, 5, 7, 8, 9, 10, 11, 16, 17, 18, 19, 20, 26, 27 ],
+	"usetemplate": 1
+}

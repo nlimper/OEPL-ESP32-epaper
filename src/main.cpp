@@ -55,6 +55,14 @@ void drawImage(uint8_t *buffer, uint8_t dataType) {
 #endif
 
 #ifdef EPD_266_G
+#ifdef EPD_266_G16
+	if (dataType == 0x23) {
+		// 4 bits per pixel: palette indices of FD.json, shown in three refreshes
+		Serial.println("display image (16 colours)");
+		EPD_2IN66G_Display16(buffer);
+		return;
+	}
+#endif
 	// two bit planes from the AP; a black/white image comes as a single plane
 	EPD_2IN66G_Init();
 	Serial.println("display image");

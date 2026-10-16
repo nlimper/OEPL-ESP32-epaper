@@ -50,5 +50,8 @@ void EPD_2IN66G_Clear(uint8_t color);
 void EPD_2IN66G_Display(uint8_t *Image);
 void EPD_2IN66G_DisplayPlanes(const uint8_t *plane0, const uint8_t *plane1);
 void EPD_2IN66G_Sleep(void);
+#ifdef EPD_266_G16
+void EPD_2IN66G_Display16(const uint8_t *Image);
+#endif
 
 #endif
